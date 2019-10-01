@@ -1,5 +1,4 @@
 import requests
-from urllib.request import urlopen
 
 
 class IP:
