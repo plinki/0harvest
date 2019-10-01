@@ -26,7 +26,7 @@ tor
 ### Example
  `./cli.py ~/ZeroNet-py3/log/ --write output_file address country city region tor` 
  
- returns 
+ writes to output: 
  ```
  address: 79.172.193.32
 country: HU
@@ -44,7 +44,7 @@ tor: False
 ```
 
 ## Wishlist
-
+- [ ] Tests
 - [ ] Asynchronous requests to API
 - [ ] Multiple APIs to process addresses with
 - [ ] Continuous fetching while browsing
