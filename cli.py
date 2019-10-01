@@ -37,12 +37,13 @@ def print_addresses(harvester: Fetcher):
                 Country: {ip.country}
                 Organization: {ip.org}
                 Timezone: {ip.timezone}
+                Tor: {ip.tor}
                 """)
     print(f"Amount: {len(harvester.fetched)}")
 
 
 def write(args_list):
-    with open(args.write[0], "a") as file:
+    with open(args.write[0], "w") as file:
         for ip in harvester.fetched:
             for key in args_list[1:]:
                 file.write(

@@ -11,6 +11,7 @@ class IP:
         self.country = None
         self.org = None
         self.timezone = None
+        self.tor = None
         self.keys = ["loc", "hostname", "city",
                      "region", "country", "org", "timezone"]
 
