@@ -48,4 +48,5 @@ tor: False
 - [ ] Asynchronous requests to API
 - [ ] Multiple APIs to process addresses with
 - [ ] Continuous fetching while browsing
+- [ ] Note which Zite the ip derives from
 - [ ] Reduce repeat requests for already processed addresses when writing to existing output file
