@@ -17,7 +17,9 @@ class Fetcher:
         Fetcher.access_token = _access_token
 
     def fetch(self):
+        self._fetch_node_list()
         fetched_ips = [item.address for item in self.fetched]
+
         for file in os.listdir(self.log_dir):
             with open(f"{self.log_dir}{file}", "r") as file:
                 for line in file:
@@ -31,7 +33,6 @@ class Fetcher:
                             self.fetched.append(_ip)
 
         else:
-            self._fetch_node_list()
             return self.fetched
 
     def _fetch_node_list(self):
@@ -44,6 +45,8 @@ class Fetcher:
                     if line.startswith("ExitAddress"):
                         ip = line.split(" ")[1]
                         nodes_file.write(f"{ip}\n")
+                else:
+                    return True
 
     def _check_tor(self, ip: IP):
         with open("nodes", "r") as nodes_file:
