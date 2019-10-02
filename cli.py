@@ -8,7 +8,7 @@ from harvest.fetcher import Fetcher
 parser = argparse.ArgumentParser(
     usage="cli.py log_directory --write filename [attributes]")
 parser.add_argument("path", type=str,
-                    help="The path to your debug file")
+                    help="The path to your log directory")
 parser.add_argument("-w", "--write", type=str, metavar=("path", "attribute"), nargs="+",
                     help="Write output to path")
 args = parser.parse_args()
