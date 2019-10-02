@@ -12,6 +12,10 @@ class Fetcher:
         self.fetched = []
         self.rgx = re.compile("\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")
         self.ignore = ["127.0.0.1"]
+
+        if self.log_dir[-1] is not "/":
+            self.log_dir = self.log_dir+"/"
+
         self.fetch()
 
         Fetcher.access_token = _access_token
