@@ -35,9 +35,8 @@ class IP:
         data = self.get(self.address)
 
         for key in self.keys:
-            key_name = key
-            if key_name in data and data[key_name] is not "":
-                setattr(self, str(key_name), data[key_name])
+            if key in data and data[key] is not "":
+                setattr(self, str(key), data[key])
 
         else:
             return True
