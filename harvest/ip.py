@@ -12,8 +12,6 @@ class IP:
         self.org = None
         self.timezone = None
         self.tor = None
-        self.keys = ["loc", "hostname", "city",
-                     "region", "country", "org", "timezone"]
 
     def __repr__(self):
         return f"IP({self.address})"
@@ -34,7 +32,7 @@ class IP:
     def populate(self):
         data = self.get(self.address)
 
-        for key in self.keys:
+        for key in [key for key in dir(self) if not key.startswith("__")]:
             if key in data and data[key] is not "":
                 setattr(self, str(key), data[key])
 
